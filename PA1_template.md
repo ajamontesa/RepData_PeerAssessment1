@@ -51,6 +51,14 @@ qplot(x = steps, data = daily, binwidth = 2000)
 ![](PA1_template_files/figure-html/unnamed-chunk-4-1.png)<!-- -->
 
 ```r
+ggsave("1 histogram1.png")
+```
+
+```
+## Saving 7 x 5 in image
+```
+
+```r
 summary(daily$steps)
 ```
 
@@ -88,6 +96,14 @@ ggplot(interval, aes(tod, steps)) +
 ```
 
 ![](PA1_template_files/figure-html/unnamed-chunk-6-1.png)<!-- -->
+
+```r
+ggsave("2 time.png")
+```
+
+```
+## Saving 7 x 5 in image
+```
   
   
 The 5-minute interval 08:35 AM has the highest average
@@ -139,6 +155,14 @@ qplot(x = imputed_steps, data = imputeddaily, binwidth = 2000)
 ![](PA1_template_files/figure-html/unnamed-chunk-9-1.png)<!-- -->
 
 ```r
+ggsave("3 histogram2.png")
+```
+
+```
+## Saving 7 x 5 in image
+```
+
+```r
 summary(daily$steps)
 ```
 
@@ -182,3 +206,11 @@ ggplot(byweekday, aes(x = tod, y = imputed_steps)) +
 ```
 
 ![](PA1_template_files/figure-html/unnamed-chunk-11-1.png)<!-- -->
+
+```r
+ggsave("4 weekday.png")
+```
+
+```
+## Saving 7 x 5 in image
+```

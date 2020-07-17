@@ -42,6 +42,7 @@ daily <- activity %>%
 The distribution and summary of the total steps per day is as follows:
 ```{r, echo=TRUE}
 qplot(x = steps, data = daily, binwidth = 2000)
+ggsave("1 histogram1.png")
 summary(daily$steps)
 ```
   
@@ -70,6 +71,7 @@ The following time series plot shows the average daily pattern:
 ggplot(interval, aes(tod, steps)) +
     geom_path(size = 1.2) +
     scale_x_datetime(breaks = "4 hours", date_labels = "%I:%M %p")
+ggsave("2 time.png")
 ```
   
   
@@ -107,6 +109,7 @@ imputeddaily <- imputed %>%
 The distribution and summary of the imputed total steps per day is as follows:
 ```{r, echo=TRUE}
 qplot(x = imputed_steps, data = imputeddaily, binwidth = 2000)
+ggsave("3 histogram2.png")
 summary(daily$steps)
 ```
   
@@ -140,4 +143,6 @@ ggplot(byweekday, aes(x = tod, y = imputed_steps)) +
     geom_path(size = 1) +
     facet_wrap(wkday ~ ., nrow = 2) +
     scale_x_datetime(breaks = "4 hours", date_labels = "%I:%M %p")
+
+ggsave("4 weekday.png")
 ```
